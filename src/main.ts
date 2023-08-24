@@ -20,13 +20,7 @@ async function run() {
       !isTag(config.github_ref) &&
       !config.input_draft
     ) {
-      console.log("⚠️ GitHub Releases requires a tag");
-      console.log(`config.input_tag_name: ${config.input_tag_name}`);
-      console.log(`config.github_ref: ${config.github_ref}`)
-      console.log(`isTag(config.github_ref): ${isTag(config.github_ref)}`);
-      console.log(`config.input_draft: ${config.input_draft}`);
-
-      throw new Error(`⚠️ GitHub Releases requires a tag`);
+      throw new Error(`⚠️ GitHub Releases requires a tag | config.input_tag_name: ${config.input_tag_name} | config.github_ref: ${config.github_ref} | isTag(config.github_ref): ${isTag(config.github_ref)} | config.input_draft: ${config.input_draft}`);
     }
     if (config.input_files) {
       const patterns = unmatchedPatterns(config.input_files);
